@@ -1,0 +1,11 @@
+syntax = "proto3";
+package fusion.v1;
+
+message RawObservation {
+  int64  ts_unix_ms = 1;
+  double lat = 2;
+  double lon = 3;
+  string sensor_type = 4;  // "rf" | "acoustic" | "gps"
+  double value = 5;        // e.g., rssi (rf), dB (acoustic), speed (gps)
+  double aux = 6;          // optional (e.g., heading)
+}
