@@ -1,6 +1,7 @@
 import os
 import socket
 import sys
+import time
 from dataclasses import dataclass
 
 THIS_DIR = os.path.dirname(__file__)
@@ -9,10 +10,13 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 from gateway.generated.fusion.v1 import observations_pb2
-from sim.common import now_ms
-
 
 SENSORS_TYPES = ["rf", "acoustic", "gps"]
+
+
+def now_ms() -> int:
+    return int(time.time() * 1000)
+
 
 @dataclass
 class SensorSender:

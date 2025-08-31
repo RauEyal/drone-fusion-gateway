@@ -8,4 +8,5 @@ message RawObservation {
   string sensor_type = 4;  // "rf" | "acoustic" | "gps"
   double value = 5;        // e.g., rssi (rf), dB (acoustic), speed (gps)
   double aux = 6;          // optional (e.g., heading)
+  string schema_version = 7;
 }

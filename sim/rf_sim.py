@@ -15,7 +15,9 @@ def main():
         while True:
             rssi = random.uniform(30, 70)
             tx.send(value=rssi, lat=lat, lon=lon)
-            print("rf - rssi sent")
+            # print("rf - rssi sent")
             time.sleep(0.2)
+
+
 if __name__ == "__main__":
-  main()
+    main()

@@ -3,10 +3,11 @@ import random
 import sys
 import time
 
-from sim.sensor_sender import SensorSender
+# Adjust the import path for SensorSender
+if __name__ == "__main__":
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Add the project root to the Python path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from sim.sensor_sender import SensorSender
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
         db = random.uniform(55, 75)  # float(os.getenv("DB", 10.0))
         while True:
             tx.send(value=db, lat=lat, lon=lon)
-            print("acoustic - speed sent")
+            # print("acoustic - speed sent")
             time.sleep(0.2)
 
 
